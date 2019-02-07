@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: servicio-creditos
+  labels:
+    app: servicio-creditos
+spec:
+  selector:
+    matchLabels:
+      app: servicio-creditos
+  template:
+    metadata:
+      labels:
+        app: servicio-creditos
+    spec:
+      containers:
+        - name: servicio-creditos
+          image: jovaniac/servicio-creditos:0.0.1-snapshot
+          ports:
+            - containerPort: 8081
+              protocol: TCP
+
+              
